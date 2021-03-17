@@ -1,0 +1,3 @@
+rootProject.name = 'cucumber-wiremock-example'
+include('app', 'lib', 'integration-test')
+

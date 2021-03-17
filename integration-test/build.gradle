@@ -1,0 +1,13 @@
+plugins {
+    id 'app-conventions'
+    id 'com.github.johnrengelman.shadow' version '6.1.0'
+}
+
+dependencies {
+    testImplementation project(':app')
+    testImplementation project(':lib')
+
+    testImplementation 'com.github.tomakehurst:wiremock:2.27.2'
+    testImplementation 'io.cucumber:cucumber-java:6.10.2'
+    testImplementation 'io.cucumber:cucumber-junit-platform-engine:6.10.2'
+}

@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+
+<ruleset name="Custom Rules"
+         xmlns="http://pmd.sourceforge.net/ruleset/2.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://pmd.sourceforge.net/ruleset/2.0.0 https://pmd.sourceforge.io/ruleset_2_0_0.xsd">
+    <description>Some rulez</description>
+    <rule ref="category/java/bestpractices.xml" />
+    <rule ref="category/java/codestyle.xml">
+        <!-- Default access modifier is a language element -->
+        <exclude name="CommentDefaultAccessModifier" />
+        <exclude name="DefaultPackage" />
+
+        <!-- Why name 'id' longer, when it is an ID -->
+        <exclude name="ShortVariable" />
+
+        <!-- While this should be avoided, if the third-party interface
+        is defined like that, I won't redefine -->
+        <exclude name="LongVariable" />
+
+        <!-- Try-catching in functional sometimes result in more than one returns -->
+        <exclude name="OnlyOneReturn" />
+    </rule>
+    <rule ref="category/java/design.xml">
+        <!-- Law of demeter is an outdated law -->
+        <exclude name="LawOfDemeter" />
+
+        <!-- No harm in throwing RuntimeExceptions in tests -->
+        <exclude name="AvoidThrowingRawExceptionTypes" />
+    </rule>
+    <rule ref="category/java/documentation.xml">
+        <!-- Comments are welcome, not regulated -->
+        <exclude name="CommentSize" />
+    </rule>
+    <rule ref="category/java/errorprone.xml">
+        <!-- Java is boilerplate as is, without introducing fields for everything -->
+        <exclude name="AvoidLiteralsInIfCondition" />
+    </rule>
+    <rule ref="category/java/multithreading.xml" />
+    <rule ref="category/java/performance.xml" />
+    <rule ref="category/java/security.xml" />
+
+</ruleset>

@@ -1,0 +1,28 @@
+plugins {
+    id 'app-conventions'
+    id 'application'
+    id 'com.github.johnrengelman.shadow' version '6.1.0'
+}
+
+dependencies {
+    implementation 'ch.qos.logback:logback-core:1.2.3'
+    implementation 'ch.qos.logback:logback-classic:1.2.3'
+    implementation 'info.picocli:picocli:4.6.1'
+    implementation 'io.micronaut.picocli:micronaut-picocli:3.2.0'
+    implementation project(':lib')
+}
+
+application {
+    applicationName = 'mvn-query'
+    // Define the main class for the application.
+    mainClassName = 'phasza.java.cucumber.example.app.App'
+}
+
+shadowJar {
+    archiveFileName = "mvn-query.jar"
+    mergeServiceFiles()
+}
+
+shadowDistZip {
+    archiveFileName = "mvn-query.zip"
+}
