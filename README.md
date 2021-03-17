@@ -111,7 +111,7 @@ I'm going to try to give a step-wise guide how to set up a project like this. I 
 Micronaut has a CLI where you can initialize new micronaut applications from templates. Also micronaut has a gradle plugin, which configures the micronaut BOM and sets up annotation processing.
 I'm gonna skip that as I find it more educational to do it by hand and understand how the setup works.
 
-1. **Add the dependencies**
+#### 1. **Add the dependencies**
 ```groovy
 annotationProcessor 'io.micronaut:micronaut-inject-java:2.4.0'
 implementation 'io.micronaut:micronaut-inject:2.4.0'
@@ -119,7 +119,7 @@ testAnnotationProcessor 'io.micronaut:micronaut-inject-java:2.4.0'
 ```
 Micronaut beans are configured with `javax.inject` annotations implemented in the micronaut library, so we need micronaut to do the annotation processing and we need the implementation to access the API.
 
-2. **Create an application context**
+#### 2. **Create an application context**
 
 The ApplicationContext is the main entry point for starting and running Micronaut applications. It can be thought of as a container object for all dependency injected objects. The ApplicationContext can be started via the `run()` method. Or alternatively, the `builder()` method can be used to customize the ApplicationContext using the ApplicationContextBuilder interface prior to running. I prefer the latter as it gives more control.
 
@@ -140,7 +140,7 @@ The `start()` method creates the context and finalizes the configuration. We hav
 The `context` should be used in a try-resource or closed manually otherwise as we need to close it to invoke all the `AutoCloseable` beans' `close()` method and free up any resources needed (like releasing a sever connection).
 
 
-3. **Create a service bean and inject it into the consumer**
+#### 3. **Create a service bean and inject it into the consumer**
 Now we need some services to inject. For example here are two test services:
 ```java
 @Singleton
@@ -184,11 +184,11 @@ try (var context = ApplicationContext
 ```
 The `findOrInstantiateBean`, as the name suggests, finds an already existing bean or creates a new one returning an `Optional<T>` which is `empty()` if the instantiation was not successful. 
 
-5. **Inject a third-party service, which is not a bean**
+#### 4. **Inject a third-party service, which is not a bean**
 If you want to consume a service from a third party library, which is not a micronaut bean you have two options: wrap it in a bean class (or provider etc.), register it as singleton.
 
 Let's assume we want to create a service from the `java.util.Random()` class.
-1. **Wrap it in a bean class**
+* **Wrap it in a bean class**
 This is pretty straight forward:
 ```java
 @Singleton
@@ -198,7 +198,7 @@ class RandomBean {
 }
 ```
 
-2. **Register is as singleton**
+* **Register is as singleton**
 We can register any number of singletons before issuing the `start()` method of the application context.
 ```java
 public static void main(String... args) {
@@ -229,14 +229,14 @@ class PingCommand {
 ```
 Is instantiated when the user gives the `app ping www.google.com` command.
 
-1. **Adding the dependencies**
+#### 1. **Adding the dependencies**
 ```groovy
 implementation 'info.picocli:picocli:4.6.1'
 implementation 'io.micronaut.picocli:micronaut-picocli:3.2.0'
 ```
 `picocli` artifact is the library itself, `micronaut-picocli` is the micronaut integration with the picocli framework.
 
-2. **Annotating the commands and sub-commands**
+#### 2. **Annotating the commands and sub-commands**
 Use the `QueryService` above, we want to achieve the following:
 * if the user inputs `app` without parameters we will print hello
 * if the user inputs `app query something` we will print something
@@ -280,7 +280,7 @@ class QueryService implements Runnable {
 ```
 As you can see, we implemented the `Runnable` interface, as the picocli framework will execute the `run()` command when the associated command is the input. Other possibility is to use a `Callable<T>` interface to provide a result for the command.
 
-3. **Create the command line and its factory**
+#### 3. **Create the command line and its factory**
 We need to create and configure the picocli command line to execute when the app runs.
 So we need to extend the `main(...)` function.
 ```java
@@ -298,7 +298,7 @@ The `CommandLine` will match the given arguments against the annotated commands 
 
 Now we will create an integration test project (I prefer this term to acceptance tests as the name, acceptance, indicates that these tests are only necessary for some higher power to accept the code changes).
 
-1. **Create a new project, which depends on the application implementation**
+#### 1. **Create a new project, which depends on the application implementation**
 Create a new sub-module and add the implementation project as dependency.
 In the example we will use JUnit5 so you will also need to run with jupiter:
 ```groovy
@@ -313,13 +313,13 @@ tasks.named('test') {
 }
 ```
 
-2. **Add the cucumber dependencies**
+#### 2. **Add the cucumber dependencies**
 ```groovy
 testImplementation 'io.cucumber:cucumber-java:6.10.2'
 testImplementation 'io.cucumber:cucumber-junit-platform-engine:6.10.2'
 ```
 
-3. **Create the test runner**
+#### 3. **Create the test runner**
 Create a new class under the `src/test/java` called `TestRunner`
 ```java
 @Cucumber
@@ -330,7 +330,7 @@ class TestRunner {
 ```
 This class is a necessary entry point for the cucumber testing. It can stay empty, but you can implement setup and tear-down functionality in it (e.g. to delete files from the filesystem)
 
-4. **Optional: Overwrite the cucumber DI to use micronaut**
+#### 4. **Optional: Overwrite the cucumber DI to use micronaut**
 Cucumber has its built-in dependency injection to instantiate implementation classes with its limitation. If you wish to use micronaut instead, then:
 
 * implement the cucumber `ObjectFactory` interface to use micronaut:
@@ -368,22 +368,22 @@ public final class TestObjectFactory implements ObjectFactory {
 * put the class path of the custom `ObjectFactory` into the file e.g.:
 `phasza.java.cucumber.example.test.TestObjectFactory`
 
-5. **Write a feature and test cases**
+#### 5. **Write a feature and test cases**
 Put the feature files into `$projectDir/src/test/resources/phasza/java/cucumber/example/test/features/Search.feature`, where of course the part after `resources` matches the package where the `TestRunner` class resides, otherwise the cucumber won't see your tests.
 
 Write the feature tests using the gherkin syntax.
 
-6. **Implement the steps**
+#### 6. **Implement the steps**
 Implement the steps in steps classes, context similarly to the example project.
 
 ### Create a mock server for the tests
 
-1. **Add the wiremock dependencies to the test project**
+#### 1. **Add the wiremock dependencies to the test project**
 ```groovy
 testImplementation 'com.github.tomakehurst:wiremock:2.27.2'
 ```
 
-2. **Create a mock server service**
+#### 2. **Create a mock server service**
 An example:
 ```java
 @Singleton
@@ -403,5 +403,5 @@ public class MockServer implements AutoClosable {
 which would fire up a new wiremock server on a dynamically allocated port.
 For more info about configuration see the wiremock documentation or the example project
 
-3. **Stub the requests you want**
+#### 3. **Stub the requests you want**
 The variation of stubbing is huge, so check out the example project and the wiremock documentation.
