@@ -1,0 +1,9 @@
+
+plugins {
+    id 'common-conventions'
+}
+
+dependencies {
+    implementation 'info.picocli:picocli:4.6.1'
+    implementation 'io.micronaut.picocli:micronaut-picocli:3.2.0'
+}

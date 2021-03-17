@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="UnknownClass" tests="4" skipped="0" failures="0" errors="0" timestamp="2021-03-17T10:12:34" hostname="localhost.localdomain" time="2.61">
+  <properties/>
+  <testcase name="Cannot reach the maven repository" classname="UnknownClass" time="2.574"/>
+  <testcase name="Searching packages on the maven repository" classname="UnknownClass" time="2.593"/>
+  <testcase name="Limit number of diplayed results for search" classname="UnknownClass" time="2.587"/>
+  <testcase name="No matching packages for search term" classname="UnknownClass" time="2.59"/>
+  <system-out><![CDATA[Established active environments: [test]
+Established active environments: [test]
+Established active environments: [test]
+Established active environments: [test]
+
+@search
+Scenario: Searching packages on the maven repository           ?[90m# phasza/java/cucumber/example/test/features/Search.feature:14?[0m
+
+@search
+Scenario: Limit number of diplayed results for search          ?[90m# phasza/java/cucumber/example/test/features/Search.feature:21?[0m
+
+@search @negative
+Scenario: No matching packages for search term                 ?[90m# phasza/java/cucumber/example/test/features/Search.feature:28?[0m
+
+@search @negative
+Scenario: Cannot reach the maven repository                    ?[90m# phasza/java/cucumber/example/test/features/Search.feature:35?[0m
+  ?[32mGiven ?[0m?[32man installation of the application?[0m                     ?[90m# phasza.java.cucumber.example.test.steps.SearchSteps.anInstallationOfTheApplication()?[0m
+  ?[32mGiven ?[0m?[32man installation of the application?[0m                     ?[90m# phasza.java.cucumber.example.test.steps.SearchSteps.anInstallationOfTheApplication()?[0m
+  ?[32mGiven ?[0m?[32man installation of the application?[0m                     ?[90m# phasza.java.cucumber.example.test.steps.SearchSteps.anInstallationOfTheApplication()?[0m
+  ?[32mGiven ?[0m?[32man installation of the application?[0m                     ?[90m# phasza.java.cucumber.example.test.steps.SearchSteps.anInstallationOfTheApplication()?[0m
+  ?[32mAnd ?[0m?[32ma maven server is available?[0m                              ?[90m# phasza.java.cucumber.example.test.steps.SearchSteps.mavenServerIsAvailable()?[0m
+  ?[32mAnd ?[0m?[32ma maven server is available?[0m                              ?[90m# phasza.java.cucumber.example.test.steps.SearchSteps.mavenServerIsAvailable()?[0m
+  ?[32mAnd ?[0m?[32ma maven server is available?[0m                              ?[90m# phasza.java.cucumber.example.test.steps.SearchSteps.mavenServerIsAvailable()?[0m
+  ?[32mAnd ?[0m?[32ma maven server is available?[0m                              ?[90m# phasza.java.cucumber.example.test.steps.SearchSteps.mavenServerIsAvailable()?[0m
+Logging initialized @4167ms
+jetty-9.2.28.v20190418
+jetty-9.2.28.v20190418
+jetty-9.2.28.v20190418
+jetty-9.2.28.v20190418
+Started o.e.j.s.ServletContextHandler@5eb168e{/__admin,null,AVAILABLE}
+Started o.e.j.s.ServletContextHandler@69c44de1{/__admin,null,AVAILABLE}
+Started o.e.j.s.ServletContextHandler@37eca22f{/,null,AVAILABLE}
+Started o.e.j.s.ServletContextHandler@32cd4c56{/,null,AVAILABLE}
+Started o.e.j.s.ServletContextHandler@3069bb0c{/__admin,null,AVAILABLE}
+Started o.e.j.s.ServletContextHandler@21e750b1{/,null,AVAILABLE}
+Started NetworkTrafficServerConnector@5cab3e5a{HTTP/1.1}{0.0.0.0:36637}
+Started @4274ms
+Started o.e.j.s.ServletContextHandler@413932b{/__admin,null,AVAILABLE}
+Started o.e.j.s.ServletContextHandler@298c4ac{/,null,AVAILABLE}
+Started NetworkTrafficServerConnector@e5f3393{HTTP/1.1}{0.0.0.0:36937}
+Started @4277ms
+Started NetworkTrafficServerConnector@1a0a951f{HTTP/1.1}{0.0.0.0:38931}
+Started @4278ms
+Started NetworkTrafficServerConnector@3c6fb5f1{HTTP/1.1}{0.0.0.0:35697}
+Started @4280ms
+  ?[32mAnd ?[0m?[32mthe following artifacts are uploaded to the maven server?[0m ?[90m# phasza.java.cucumber.example.test.steps.SearchSteps.followingArtifactsAreUploadedToTheMavenServer(io.cucumber.datatable.DataTable)?[0m
+  ?[32mAnd ?[0m?[32mthe following artifacts are uploaded to the maven server?[0m ?[90m# phasza.java.cucumber.example.test.steps.SearchSteps.followingArtifactsAreUploadedToTheMavenServer(io.cucumber.datatable.DataTable)?[0m
+  ?[32mGiven ?[0m?[32mthe maven server is down?[0m                               ?[90m# phasza.java.cucumber.example.test.steps.SearchSteps.mavenServerIsDown()?[0m
+  ?[32mAnd ?[0m?[32mthe following artifacts are uploaded to the maven server?[0m ?[90m# phasza.java.cucumber.example.test.steps.SearchSteps.followingArtifactsAreUploadedToTheMavenServer(io.cucumber.datatable.DataTable)?[0m
+Established active environments: [test]
+  ?[32mAnd ?[0m?[32mthe following artifacts are uploaded to the maven server?[0m ?[90m# phasza.java.cucumber.example.test.steps.SearchSteps.followingArtifactsAreUploadedToTheMavenServer(io.cucumber.datatable.DataTable)?[0m
+Established active environments: [test]
+Established active environments: [test]
+Established active environments: [test]
+RequestHandlerClass from context returned com.github.tomakehurst.wiremock.http.StubRequestHandler. Normalized mapped under returned 'null'
+RequestHandlerClass from context returned com.github.tomakehurst.wiremock.http.StubRequestHandler. Normalized mapped under returned 'null'
+RequestHandlerClass from context returned com.github.tomakehurst.wiremock.http.StubRequestHandler. Normalized mapped under returned 'null'
+RequestHandlerClass from context returned com.github.tomakehurst.wiremock.http.StubRequestHandler. Normalized mapped under returned 'null'
+  ?[32mWhen ?[0m?[32mI run ?[0m?[32m?[1m"mvn-query search com"?[0m                            ?[90m# phasza.java.cucumber.example.test.steps.SearchSteps.whenRunCommand(java.lang.String)?[0m
+  ?[32mThen ?[0m?[32mthe command returns with error?[0m                          ?[90m# phasza.java.cucumber.example.test.steps.SearchSteps.commandReturnsWithError()?[0m
+  ?[32mAnd ?[0m?[32mthe following lines are included in the standard error?[0m   ?[90m# phasza.java.cucumber.example.test.steps.SearchSteps.followingLinesAreIncludedInTheStandardError(java.util.List<java.lang.String>)?[0m
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

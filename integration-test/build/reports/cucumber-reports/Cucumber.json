@@ -1,0 +1,649 @@
+[
+  {
+    "line": 2,
+    "elements": [
+      {
+        "line": 5,
+        "name": "",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 104479349,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "an installation of the application",
+            "match": {
+              "location": "phasza.java.cucumber.example.test.steps.SearchSteps.anInstallationOfTheApplication()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 117137,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "a maven server is available",
+            "match": {
+              "location": "phasza.java.cucumber.example.test.steps.SearchSteps.mavenServerIsAvailable()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 514329389,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "the following artifacts are uploaded to the maven server",
+            "match": {
+              "location": "phasza.java.cucumber.example.test.steps.SearchSteps.followingArtifactsAreUploadedToTheMavenServer(io.cucumber.datatable.DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "com.pot.java",
+                  "gigen",
+                  "1.2.3.4"
+                ]
+              },
+              {
+                "cells": [
+                  "com.google",
+                  "guice",
+                  "1.0-alpha"
+                ]
+              },
+              {
+                "cells": [
+                  "iron.rtf",
+                  "captain",
+                  "1.0"
+                ]
+              },
+              {
+                "cells": [
+                  "no.men",
+                  "est-omen",
+                  "6.0"
+                ]
+              }
+            ],
+            "keyword": "And "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2021-03-17T10:12:36.088Z",
+        "line": 14,
+        "name": "Searching packages on the maven repository",
+        "description": "",
+        "id": "search-command;searching-packages-on-the-maven-repository",
+        "after": [
+          {
+            "result": {
+              "duration": 137306,
+              "status": "passed"
+            },
+            "match": {
+              "location": "phasza.java.cucumber.example.test.steps.SearchSteps.afterScenario(io.cucumber.java.Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 468454042,
+              "status": "passed"
+            },
+            "line": 15,
+            "name": "I run \"mvn-query search com\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"mvn-query search com\"",
+                  "offset": 6
+                }
+              ],
+              "location": "phasza.java.cucumber.example.test.steps.SearchSteps.whenRunCommand(java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 97617,
+              "status": "passed"
+            },
+            "line": 16,
+            "name": "the command returns with success",
+            "match": {
+              "location": "phasza.java.cucumber.example.test.steps.SearchSteps.commandReturnsWithSuccess()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 291836,
+              "status": "passed"
+            },
+            "line": 17,
+            "name": "the following lines are included in the standard output",
+            "match": {
+              "location": "phasza.java.cucumber.example.test.steps.SearchSteps.followingLinesAreIncludedInTheStandardOutput(java.util.List\u003cjava.lang.String\u003e)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "com.google:guice:1.0-alpha"
+                ]
+              },
+              {
+                "cells": [
+                  "com.pot.java:gigen:1.2.3.4"
+                ]
+              }
+            ],
+            "keyword": "And "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@search"
+          }
+        ]
+      },
+      {
+        "line": 5,
+        "name": "",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 127536237,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "an installation of the application",
+            "match": {
+              "location": "phasza.java.cucumber.example.test.steps.SearchSteps.anInstallationOfTheApplication()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 47898,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "a maven server is available",
+            "match": {
+              "location": "phasza.java.cucumber.example.test.steps.SearchSteps.mavenServerIsAvailable()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 518725769,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "the following artifacts are uploaded to the maven server",
+            "match": {
+              "location": "phasza.java.cucumber.example.test.steps.SearchSteps.followingArtifactsAreUploadedToTheMavenServer(io.cucumber.datatable.DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "com.pot.java",
+                  "gigen",
+                  "1.2.3.4"
+                ]
+              },
+              {
+                "cells": [
+                  "com.google",
+                  "guice",
+                  "1.0-alpha"
+                ]
+              },
+              {
+                "cells": [
+                  "iron.rtf",
+                  "captain",
+                  "1.0"
+                ]
+              },
+              {
+                "cells": [
+                  "no.men",
+                  "est-omen",
+                  "6.0"
+                ]
+              }
+            ],
+            "keyword": "And "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2021-03-17T10:12:36.096Z",
+        "line": 21,
+        "name": "Limit number of diplayed results for search",
+        "description": "",
+        "id": "search-command;limit-number-of-diplayed-results-for-search",
+        "after": [
+          {
+            "result": {
+              "duration": 63770,
+              "status": "passed"
+            },
+            "match": {
+              "location": "phasza.java.cucumber.example.test.steps.SearchSteps.afterScenario(io.cucumber.java.Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 468440389,
+              "status": "passed"
+            },
+            "line": 22,
+            "name": "I run \"mvn-query search com -h\u003d1\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"mvn-query search com -h\u003d1\"",
+                  "offset": 6
+                }
+              ],
+              "location": "phasza.java.cucumber.example.test.steps.SearchSteps.whenRunCommand(java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 63957,
+              "status": "passed"
+            },
+            "line": 23,
+            "name": "the command returns with success",
+            "match": {
+              "location": "phasza.java.cucumber.example.test.steps.SearchSteps.commandReturnsWithSuccess()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 220710,
+              "status": "passed"
+            },
+            "line": 24,
+            "name": "the following lines are included in the standard output",
+            "match": {
+              "location": "phasza.java.cucumber.example.test.steps.SearchSteps.followingLinesAreIncludedInTheStandardOutput(java.util.List\u003cjava.lang.String\u003e)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "com.google:guice:1.0-alpha"
+                ]
+              }
+            ],
+            "keyword": "And "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@search"
+          }
+        ]
+      },
+      {
+        "line": 5,
+        "name": "",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 124755935,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "an installation of the application",
+            "match": {
+              "location": "phasza.java.cucumber.example.test.steps.SearchSteps.anInstallationOfTheApplication()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 117315,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "a maven server is available",
+            "match": {
+              "location": "phasza.java.cucumber.example.test.steps.SearchSteps.mavenServerIsAvailable()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 513841724,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "the following artifacts are uploaded to the maven server",
+            "match": {
+              "location": "phasza.java.cucumber.example.test.steps.SearchSteps.followingArtifactsAreUploadedToTheMavenServer(io.cucumber.datatable.DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "com.pot.java",
+                  "gigen",
+                  "1.2.3.4"
+                ]
+              },
+              {
+                "cells": [
+                  "com.google",
+                  "guice",
+                  "1.0-alpha"
+                ]
+              },
+              {
+                "cells": [
+                  "iron.rtf",
+                  "captain",
+                  "1.0"
+                ]
+              },
+              {
+                "cells": [
+                  "no.men",
+                  "est-omen",
+                  "6.0"
+                ]
+              }
+            ],
+            "keyword": "And "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2021-03-17T10:12:36.096Z",
+        "line": 28,
+        "name": "No matching packages for search term",
+        "description": "",
+        "id": "search-command;no-matching-packages-for-search-term",
+        "after": [
+          {
+            "result": {
+              "duration": 78458,
+              "status": "passed"
+            },
+            "match": {
+              "location": "phasza.java.cucumber.example.test.steps.SearchSteps.afterScenario(io.cucumber.java.Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 475675741,
+              "status": "passed"
+            },
+            "line": 29,
+            "name": "I run \"mvn-query search not_existing\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"mvn-query search not_existing\"",
+                  "offset": 6
+                }
+              ],
+              "location": "phasza.java.cucumber.example.test.steps.SearchSteps.whenRunCommand(java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 90888,
+              "status": "passed"
+            },
+            "line": 30,
+            "name": "the command returns with error",
+            "match": {
+              "location": "phasza.java.cucumber.example.test.steps.SearchSteps.commandReturnsWithError()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 2031582,
+              "status": "passed"
+            },
+            "line": 31,
+            "name": "the following lines are included in the standard error",
+            "match": {
+              "location": "phasza.java.cucumber.example.test.steps.SearchSteps.followingLinesAreIncludedInTheStandardError(java.util.List\u003cjava.lang.String\u003e)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "No matching artifacts could be found!"
+                ]
+              }
+            ],
+            "keyword": "And "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@search"
+          },
+          {
+            "name": "@negative"
+          }
+        ]
+      },
+      {
+        "line": 5,
+        "name": "",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 125965385,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "an installation of the application",
+            "match": {
+              "location": "phasza.java.cucumber.example.test.steps.SearchSteps.anInstallationOfTheApplication()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 56580,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "a maven server is available",
+            "match": {
+              "location": "phasza.java.cucumber.example.test.steps.SearchSteps.mavenServerIsAvailable()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 514301417,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "the following artifacts are uploaded to the maven server",
+            "match": {
+              "location": "phasza.java.cucumber.example.test.steps.SearchSteps.followingArtifactsAreUploadedToTheMavenServer(io.cucumber.datatable.DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "com.pot.java",
+                  "gigen",
+                  "1.2.3.4"
+                ]
+              },
+              {
+                "cells": [
+                  "com.google",
+                  "guice",
+                  "1.0-alpha"
+                ]
+              },
+              {
+                "cells": [
+                  "iron.rtf",
+                  "captain",
+                  "1.0"
+                ]
+              },
+              {
+                "cells": [
+                  "no.men",
+                  "est-omen",
+                  "6.0"
+                ]
+              }
+            ],
+            "keyword": "And "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2021-03-17T10:12:36.096Z",
+        "line": 35,
+        "name": "Cannot reach the maven repository",
+        "description": "",
+        "id": "search-command;cannot-reach-the-maven-repository",
+        "after": [
+          {
+            "result": {
+              "duration": 1069187,
+              "status": "passed"
+            },
+            "match": {
+              "location": "phasza.java.cucumber.example.test.steps.SearchSteps.afterScenario(io.cucumber.java.Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 246066,
+              "status": "passed"
+            },
+            "line": 36,
+            "name": "the maven server is down",
+            "match": {
+              "location": "phasza.java.cucumber.example.test.steps.SearchSteps.mavenServerIsDown()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 425743231,
+              "status": "passed"
+            },
+            "line": 37,
+            "name": "I run \"mvn-query search com\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"mvn-query search com\"",
+                  "offset": 6
+                }
+              ],
+              "location": "phasza.java.cucumber.example.test.steps.SearchSteps.whenRunCommand(java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 2487968,
+              "status": "passed"
+            },
+            "line": 38,
+            "name": "the command returns with error",
+            "match": {
+              "location": "phasza.java.cucumber.example.test.steps.SearchSteps.commandReturnsWithError()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 4359887,
+              "status": "passed"
+            },
+            "line": 39,
+            "name": "the following lines are included in the standard error",
+            "match": {
+              "location": "phasza.java.cucumber.example.test.steps.SearchSteps.followingLinesAreIncludedInTheStandardError(java.util.List\u003cjava.lang.String\u003e)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "Repository cannot be reached!"
+                ]
+              }
+            ],
+            "keyword": "And "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@search"
+          },
+          {
+            "name": "@negative"
+          }
+        ]
+      }
+    ],
+    "name": "Search command",
+    "description": "  The application is able to search packages on a maven repository",
+    "id": "search-command",
+    "keyword": "Feature",
+    "uri": "classpath:phasza/java/cucumber/example/test/features/Search.feature",
+    "tags": [
+      {
+        "name": "@search",
+        "type": "Tag",
+        "location": {
+          "line": 1,
+          "column": 1
+        }
+      }
+    ]
+  }
+]
