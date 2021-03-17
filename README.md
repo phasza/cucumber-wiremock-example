@@ -17,6 +17,12 @@ The structure of the project is the following:
     * /integration-test         <- cucumber tests for the `app` project
     * /lib                      <- library to connect to the MVN server
 
+Running the application:
+```
+cd $projectRoot/app
+gradle run --args="search gui"
+```
+
 ## Technologies and frameworks used in this example
 * java 11+
 * gradle

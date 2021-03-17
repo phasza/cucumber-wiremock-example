@@ -1,8 +1,0 @@
-phasza/java/cucumber/example/app/Application.java
- phasza.java.cucumber.example.app.Application
-phasza/java/cucumber/example/app/Status.java
- phasza.java.cucumber.example.app.Status
-phasza/java/cucumber/example/app/VersionProvider.java
- phasza.java.cucumber.example.app.VersionProvider
-phasza/java/cucumber/example/app/SearchCommand.java
- phasza.java.cucumber.example.app.SearchCommand

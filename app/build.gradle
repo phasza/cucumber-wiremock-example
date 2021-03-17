@@ -15,7 +15,7 @@ dependencies {
 application {
     applicationName = 'mvn-query'
     // Define the main class for the application.
-    mainClassName = 'phasza.java.cucumber.example.app.App'
+    mainClassName = 'phasza.java.cucumber.example.app.Application'
 }
 
 shadowJar {
