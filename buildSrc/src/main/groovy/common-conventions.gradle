@@ -9,8 +9,8 @@ repositories {
 }
 
 dependencies {
-    compileOnly "org.projectlombok:lombok:1.18.26"
-    annotationProcessor "org.projectlombok:lombok:1.18.26"
+    compileOnly "org.projectlombok:lombok:$versionLombok"
+    annotationProcessor "org.projectlombok:lombok:$versionLombok"
     annotationProcessor "io.micronaut:micronaut-inject-java:$versionMicronaut"
 
     implementation "org.slf4j:slf4j-api:1.7.30"
@@ -22,11 +22,11 @@ dependencies {
     implementation "com.fasterxml.jackson.core:jackson-annotations:2.12.2"
     implementation "com.fasterxml.jackson.core:jackson-databind:2.12.2"
 
-    testCompileOnly "org.projectlombok:lombok:1.18.26"
-    testAnnotationProcessor "org.projectlombok:lombok:1.18.26"
+    testCompileOnly "org.projectlombok:lombok:$versionLombok"
+    testAnnotationProcessor "org.projectlombok:lombok:$versionLombok"
     testAnnotationProcessor "io.micronaut:micronaut-inject-java:$versionMicronaut"
 
-    testImplementation "org.junit.jupiter:junit-jupiter-api:5.6.2"
+    testImplementation "org.junit.jupiter:junit-jupiter-api:$versionJunitJupiterApi"
     testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine"
 }
 

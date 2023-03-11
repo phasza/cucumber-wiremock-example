@@ -304,7 +304,7 @@ In the example we will use JUnit5 so you will also need to run with jupiter:
 ```groovy
 dependencies {
     ...
-    testImplementation "org.junit.jupiter:junit-jupiter-api:5.6.2"
+    testImplementation "org.junit.jupiter:junit-jupiter-api:$versionJunitJupiterApi"
     testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine"
 }
 
