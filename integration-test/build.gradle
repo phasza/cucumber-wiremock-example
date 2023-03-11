@@ -7,7 +7,7 @@ dependencies {
     testImplementation project(":app")
     testImplementation project(":lib")
 
-    testImplementation "com.github.tomakehurst:wiremock:2.27.2"
-    testImplementation "io.cucumber:cucumber-java:6.10.2"
-    testImplementation "io.cucumber:cucumber-junit-platform-engine:6.10.2"
+    testImplementation "com.github.tomakehurst:wiremock:$versionWiremock"
+    testImplementation "io.cucumber:cucumber-java:$versionCucumberJava"
+    testImplementation "io.cucumber:cucumber-junit-platform-engine:$versionCucumberJava"
 }
