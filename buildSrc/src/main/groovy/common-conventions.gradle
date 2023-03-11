@@ -1,7 +1,7 @@
 
 plugins {
-    id 'java'
-    id 'pmd'
+    id "java"
+    id "pmd"
 }
 
 repositories {
@@ -9,25 +9,25 @@ repositories {
 }
 
 dependencies {
-    compileOnly 'org.projectlombok:lombok:1.18.26'
-    annotationProcessor 'org.projectlombok:lombok:1.18.26'
-    annotationProcessor 'io.micronaut:micronaut-inject-java:2.4.0'
+    compileOnly "org.projectlombok:lombok:1.18.26"
+    annotationProcessor "org.projectlombok:lombok:1.18.26"
+    annotationProcessor "io.micronaut:micronaut-inject-java:$versionMicronaut"
 
     implementation "org.slf4j:slf4j-api:1.7.30"
-    implementation 'io.micronaut:micronaut-inject:2.4.0'
+    implementation "io.micronaut:micronaut-inject:$versionMicronaut"
 
-    implementation 'org.apache.httpcomponents:httpclient:4.5.1'
+    implementation "org.apache.httpcomponents:httpclient:4.5.1"
 
-    implementation 'com.fasterxml.jackson.core:jackson-core:2.12.2'
-    implementation 'com.fasterxml.jackson.core:jackson-annotations:2.12.2'
-    implementation 'com.fasterxml.jackson.core:jackson-databind:2.12.2'
+    implementation "com.fasterxml.jackson.core:jackson-core:2.12.2"
+    implementation "com.fasterxml.jackson.core:jackson-annotations:2.12.2"
+    implementation "com.fasterxml.jackson.core:jackson-databind:2.12.2"
 
-    testCompileOnly 'org.projectlombok:lombok:1.18.26'
-    testAnnotationProcessor 'org.projectlombok:lombok:1.18.26'
-    testAnnotationProcessor 'io.micronaut:micronaut-inject-java:2.4.0'
+    testCompileOnly "org.projectlombok:lombok:1.18.26"
+    testAnnotationProcessor "org.projectlombok:lombok:1.18.26"
+    testAnnotationProcessor "io.micronaut:micronaut-inject-java:$versionMicronaut"
 
-    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.6.2'
-    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
+    testImplementation "org.junit.jupiter:junit-jupiter-api:5.6.2"
+    testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine"
 }
 
 pmd {
@@ -35,6 +35,6 @@ pmd {
     ruleSets = []
 }
 
-tasks.named('test') {
+tasks.named("test") {
     useJUnitPlatform()
 }

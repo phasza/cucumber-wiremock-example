@@ -1,11 +1,11 @@
 package phasza.java.cucumber.example.test.context;
 
+import jakarta.inject.Singleton;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import phasza.java.cucumber.example.app.Application;
 import phasza.java.cucumber.example.app.Status;
 
-import javax.inject.Singleton;
 import java.util.ArrayList;
 import java.util.List;
 

@@ -3,7 +3,7 @@ package phasza.java.cucumber.example.app;
 import lombok.Getter;
 
 /**
- * Represents the return code or 'status' of the application
+ * Represents the return code or "status" of the application
  */
 public enum Status {
     ERROR(1),

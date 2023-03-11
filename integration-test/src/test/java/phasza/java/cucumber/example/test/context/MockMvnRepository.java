@@ -1,10 +1,10 @@
 package phasza.java.cucumber.example.test.context;
 
 import com.github.tomakehurst.wiremock.WireMockServer;
+import jakarta.inject.Singleton;
 import lombok.RequiredArgsConstructor;
 import phasza.java.cucumber.example.test.data.MockArtifact;
 
-import javax.inject.Singleton;
 import java.util.*;
 
 import static com.github.tomakehurst.wiremock.client.WireMock.*;

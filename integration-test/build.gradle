@@ -1,13 +1,13 @@
 plugins {
-    id 'app-conventions'
-    id 'com.github.johnrengelman.shadow' version '7.1.2'
+    id "app-conventions"
+    id "com.github.johnrengelman.shadow" version "7.1.2"
 }
 
 dependencies {
-    testImplementation project(':app')
-    testImplementation project(':lib')
+    testImplementation project(":app")
+    testImplementation project(":lib")
 
-    testImplementation 'com.github.tomakehurst:wiremock:2.27.2'
-    testImplementation 'io.cucumber:cucumber-java:6.10.2'
-    testImplementation 'io.cucumber:cucumber-junit-platform-engine:6.10.2'
+    testImplementation "com.github.tomakehurst:wiremock:2.27.2"
+    testImplementation "io.cucumber:cucumber-java:6.10.2"
+    testImplementation "io.cucumber:cucumber-junit-platform-engine:6.10.2"
 }

@@ -1,13 +1,13 @@
 package phasza.java.cucumber.example.app;
 
+import jakarta.inject.Singleton;
 import lombok.RequiredArgsConstructor;
 import phasza.java.cucumber.example.lib.MvnConnector;
 import picocli.CommandLine;
 
-import javax.inject.Singleton;
 
 /**
- * Implements the 'search' command
+ * Implements the "search" command
  */
 @Singleton
 @CommandLine.Command(name = "search")

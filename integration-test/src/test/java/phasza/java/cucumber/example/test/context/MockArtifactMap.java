@@ -8,13 +8,13 @@ import com.github.tomakehurst.wiremock.extension.Parameters;
 import com.github.tomakehurst.wiremock.extension.ResponseDefinitionTransformer;
 import com.github.tomakehurst.wiremock.http.Request;
 import com.github.tomakehurst.wiremock.http.ResponseDefinition;
+import jakarta.inject.Singleton;
 import lombok.AllArgsConstructor;
 import phasza.java.cucumber.example.lib.request.RowsProperty;
 import phasza.java.cucumber.example.lib.response.MvnResponse;
 import phasza.java.cucumber.example.lib.response.Response;
 import phasza.java.cucumber.example.test.data.MockArtifact;
 
-import javax.inject.Singleton;
 import java.util.AbstractMap;
 import java.util.Arrays;
 import java.util.Map;

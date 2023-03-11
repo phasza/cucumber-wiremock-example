@@ -3,7 +3,7 @@ package phasza.java.cucumber.example.lib.request;
 import lombok.Getter;
 
 /**
- * Implements the 'wt' property, which defines the API output format (XML or JSON)
+ * Implements the "wt" property, which defines the API output format (XML or JSON)
  */
 public final class WTProperty implements MvnURLProperty {
 
@@ -38,7 +38,7 @@ public final class WTProperty implements MvnURLProperty {
     }
 
     /**
-     * Represents the type value for the 'wt' property
+     * Represents the type value for the "wt" property
      */
     private enum Type {
         JSON("json");

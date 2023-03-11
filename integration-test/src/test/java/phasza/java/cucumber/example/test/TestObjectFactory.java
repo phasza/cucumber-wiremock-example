@@ -14,7 +14,7 @@ import java.util.Optional;
  * Factory for instantiating test object during a test life-cycle.
  * This factory replaces the default cucumber object factory with a micronaut factory.
  * (cucumber has its built-in dependency injection)
- * The default factory is overridden by the '/resources/META-INF.service/io.cucumber.core.backend.ObjectFactory'
+ * The default factory is overridden by the "/resources/META-INF.service/io.cucumber.core.backend.ObjectFactory"
  * descriptor, where you need to point to the ObjectFactory class
  */
 @NoArgsConstructor

@@ -67,7 +67,7 @@ Underneath we can implement the programmatic part of the instructions like:
 ```java
 @When("^I run {string}$")
 public void whenIRunCommand(String command) {
-    testContext.setReturnCode(new AppUnderTest().execute(command.split(' ')))
+    testContext.setReturnCode(new AppUnderTest().execute(command.split(" ")))
 }
 ``` 
 The framework will substitute the `whenIRunCommand` method when the regular expression in the `@When` annotation matches the instruction in the gherkin file. The method will be invoked with a parameter, which is extracted by the `{string}` matcher.
@@ -102,22 +102,22 @@ Moreover picocli commands and subcommands implemented as a micronaut `@Singleton
 
 ## Creating a similar project
 
-I'm going to try to give a step-wise guide how to set up a project like this. I assume that you are familiar with gradle projects, if not there are plenty of guides on the web.
+I"m going to try to give a step-wise guide how to set up a project like this. I assume that you are familiar with gradle projects, if not there are plenty of guides on the web.
 
 > Note: I prefer gradle over maven, because I find it faster, more flexible and better readable but it is up to you to decide of course.
 
 ### Creating a micronaut application
 
 Micronaut has a CLI where you can initialize new micronaut applications from templates. Also micronaut has a gradle plugin, which configures the micronaut BOM and sets up annotation processing.
-I'm gonna skip that as I find it more educational to do it by hand and understand how the setup works.
+I"m gonna skip that as I find it more educational to do it by hand and understand how the setup works.
 
 #### 1. **Add the dependencies**
 ```groovy
-annotationProcessor 'io.micronaut:micronaut-inject-java:2.4.0'
-implementation 'io.micronaut:micronaut-inject:2.4.0'
-testAnnotationProcessor 'io.micronaut:micronaut-inject-java:2.4.0'
+annotationProcessor "io.micronaut:micronaut-inject-java:3.8.7"
+implementation "io.micronaut:micronaut-inject:3.8.7"
+testAnnotationProcessor "io.micronaut:micronaut-inject-java:3.8.7"
 ```
-Micronaut beans are configured with `javax.inject` annotations implemented in the micronaut library, so we need micronaut to do the annotation processing and we need the implementation to access the API.
+Micronaut beans are configured with `jakarta.inject` annotations implemented in the micronaut library, so we need micronaut to do the annotation processing and we need the implementation to access the API.
 
 #### 2. **Create an application context**
 
@@ -135,9 +135,9 @@ public static void main(String... args) {
 ```
 The `builder()` needs the main class of the application (I guess it needs it to get the current class loader) and optionally an environment to configure the framework. The default environment is `FUNCTIONAL` so I omitted the environment.
 
-The `start()` method creates the context and finalizes the configuration. We haven't configured much for now.
+The `start()` method creates the context and finalizes the configuration. We haven"t configured much for now.
 
-The `context` should be used in a try-resource or closed manually otherwise as we need to close it to invoke all the `AutoCloseable` beans' `close()` method and free up any resources needed (like releasing a sever connection).
+The `context` should be used in a try-resource or closed manually otherwise as we need to close it to invoke all the `AutoCloseable` beans" `close()` method and free up any resources needed (like releasing a sever connection).
 
 
 #### 3. **Create a service bean and inject it into the consumer**
@@ -187,7 +187,7 @@ The `findOrInstantiateBean`, as the name suggests, finds an already existing bea
 #### 4. **Inject a third-party service, which is not a bean**
 If you want to consume a service from a third party library, which is not a micronaut bean you have two options: wrap it in a bean class (or provider etc.), register it as singleton.
 
-Let's assume we want to create a service from the `java.util.Random()` class.
+Let"s assume we want to create a service from the `java.util.Random()` class.
 * **Wrap it in a bean class**
 This is pretty straight forward:
 ```java
@@ -214,7 +214,7 @@ public static void main(String... args) {
 
 ### Modifying the application to use picocli
 
-Picocli is a command line interface library for Java, which has basically all the features you will ever need for creating a CLI application. What's even better is that it has a seamless integration with a number of popular java frameworks, micronaut amongst them.
+Picocli is a command line interface library for Java, which has basically all the features you will ever need for creating a CLI application. What"s even better is that it has a seamless integration with a number of popular java frameworks, micronaut amongst them.
 
 MicronautPicocli defines commands and sub-commands as micronaut beans, which gets instantiated as the picocli command line parser matches the commands and arguments registered for the bean.
 
@@ -231,8 +231,8 @@ Is instantiated when the user gives the `app ping www.google.com` command.
 
 #### 1. **Adding the dependencies**
 ```groovy
-implementation 'info.picocli:picocli:4.6.1'
-implementation 'io.micronaut.picocli:micronaut-picocli:3.2.0'
+implementation "info.picocli:picocli:4.7.1"
+implementation "io.micronaut.picocli:micronaut-picocli:4.3.0"
 ```
 `picocli` artifact is the library itself, `micronaut-picocli` is the micronaut integration with the picocli framework.
 
@@ -304,19 +304,19 @@ In the example we will use JUnit5 so you will also need to run with jupiter:
 ```groovy
 dependencies {
     ...
-    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.6.2'
-    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
+    testImplementation "org.junit.jupiter:junit-jupiter-api:5.6.2"
+    testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine"
 }
 
-tasks.named('test') {
+tasks.named("test") {
     useJUnitPlatform()
 }
 ```
 
 #### 2. **Add the cucumber dependencies**
 ```groovy
-testImplementation 'io.cucumber:cucumber-java:6.10.2'
-testImplementation 'io.cucumber:cucumber-junit-platform-engine:6.10.2'
+testImplementation "io.cucumber:cucumber-java:6.10.2"
+testImplementation "io.cucumber:cucumber-junit-platform-engine:6.10.2"
 ```
 
 #### 3. **Create the test runner**
@@ -369,7 +369,7 @@ public final class TestObjectFactory implements ObjectFactory {
 `phasza.java.cucumber.example.test.TestObjectFactory`
 
 #### 5. **Write a feature and test cases**
-Put the feature files into `$projectDir/src/test/resources/phasza/java/cucumber/example/test/features/Search.feature`, where of course the part after `resources` matches the package where the `TestRunner` class resides, otherwise the cucumber won't see your tests.
+Put the feature files into `$projectDir/src/test/resources/phasza/java/cucumber/example/test/features/Search.feature`, where of course the part after `resources` matches the package where the `TestRunner` class resides, otherwise the cucumber won"t see your tests.
 
 Write the feature tests using the gherkin syntax.
 
@@ -380,7 +380,7 @@ Implement the steps in steps classes, context similarly to the example project.
 
 #### 1. **Add the wiremock dependencies to the test project**
 ```groovy
-testImplementation 'com.github.tomakehurst:wiremock:2.27.2'
+testImplementation "com.github.tomakehurst:wiremock:2.27.2"
 ```
 
 #### 2. **Create a mock server service**

@@ -6,7 +6,7 @@ import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
 
 /**
- * Implements the 'q' or 'query' property for the MVN selection
+ * Implements the "q" or "query" property for the MVN selection
  */
 @Value
 public class QueryProperty implements MvnURLProperty {

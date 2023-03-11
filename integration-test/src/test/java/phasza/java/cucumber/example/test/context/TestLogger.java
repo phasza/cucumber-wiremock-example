@@ -1,9 +1,9 @@
 package phasza.java.cucumber.example.test.context;
 
+import jakarta.inject.Singleton;
 import org.slf4j.Logger;
 import org.slf4j.Marker;
 
-import javax.inject.Singleton;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.PrintWriter;

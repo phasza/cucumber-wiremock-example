@@ -13,11 +13,11 @@
         <exclude name="CommentDefaultAccessModifier" />
         <exclude name="DefaultPackage" />
 
-        <!-- Why name 'id' longer, when it is an ID -->
+        <!-- Why name "id" longer, when it is an ID -->
         <exclude name="ShortVariable" />
 
         <!-- While this should be avoided, if the third-party interface
-        is defined like that, I won't redefine -->
+        is defined like that, I won"t redefine -->
         <exclude name="LongVariable" />
 
         <!-- Try-catching in functional sometimes result in more than one returns -->

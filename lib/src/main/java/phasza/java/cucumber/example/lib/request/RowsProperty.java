@@ -3,7 +3,7 @@ package phasza.java.cucumber.example.lib.request;
 import lombok.Value;
 
 /**
- * Implementation of the 'rows' property, which limits the displayed results
+ * Implementation of the "rows" property, which limits the displayed results
  */
 @Value
 public class RowsProperty implements MvnURLProperty {

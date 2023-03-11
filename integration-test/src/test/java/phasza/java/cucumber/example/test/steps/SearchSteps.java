@@ -6,13 +6,13 @@ import io.cucumber.java.Scenario;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import jakarta.inject.Singleton;
 import lombok.AllArgsConstructor;
 import phasza.java.cucumber.example.app.Status;
 import phasza.java.cucumber.example.test.context.MockMvnRepository;
 import phasza.java.cucumber.example.test.context.ApplicationContext;
 import phasza.java.cucumber.example.test.data.MockArtifact;
 
-import javax.inject.Singleton;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -21,7 +21,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertLinesMatch;
 
 /**
- * Container which implements the steps of a 'search' feature scenario.
+ * Container which implements the steps of a "search" feature scenario.
  */
 @Singleton
 @AllArgsConstructor
@@ -94,7 +94,7 @@ public class SearchSteps {
     }
 
     /**
-     * @param command Can start with 'mvn-query' for better readability, but this can be ommitted
+     * @param command Can start with "mvn-query" for better readability, but this can be ommitted
      */
     @When("I run {string}")
     public void whenRunCommand(final String command) {

@@ -21,7 +21,7 @@ public final class MvnHttpUtils {
      * Creates a select query with given URL and properties.
      * e.g. Given repositoryURL=http://test.maven.org
      *      And properties are: QueryProperty("guice"), RowsProperty(20), WTProperty("json")
-     *      Then the result is 'http://test.maven.org/solrsearch/select?q=guice&rows=20&wt=json'
+     *      Then the result is "http://test.maven.org/solrsearch/select?q=guice&rows=20&wt=json"
      * @param repositoryURL URL to server
      * @param properties Properties for the query
      * @return Formatted select URL

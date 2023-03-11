@@ -9,7 +9,7 @@ import lombok.Value;
 import java.util.List;
 
 /**
- * JSON object for the MVN response's [response] part, which contains the
+ * JSON object for the MVN response"s [response] part, which contains the
  * number of results found as well as the matching artifacts for the query.
  * Not interesting fields are ignored.
  */
@@ -24,7 +24,7 @@ public class Response {
     int numFound;
     /**
      * List of displayed entries. The server limits the number of elements which
-     * are returned by the query. The 'rows' property controls this limit.
+     * are returned by the query. The "rows" property controls this limit.
      */
     List<DocsEntry> docs;
 }

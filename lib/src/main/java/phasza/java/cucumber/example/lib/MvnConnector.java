@@ -1,6 +1,7 @@
 package phasza.java.cucumber.example.lib;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import jakarta.inject.Singleton;
 import lombok.AllArgsConstructor;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.HttpClients;
@@ -12,7 +13,6 @@ import phasza.java.cucumber.example.lib.request.WTProperty;
 import phasza.java.cucumber.example.lib.response.MvnResponse;
 import phasza.java.cucumber.example.lib.response.Response;
 
-import javax.inject.Singleton;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Optional;
@@ -41,9 +41,9 @@ public final class MvnConnector {
      *    http://search.maven.org/solrsearch/select?q=guice&rows=20&wt=json
      *    (documentation https://search.maven.org/classic/#api)
      * @param repositoryURL URL of the maven server to connect (e.g https://search.maven.org)
-     * @param pattern Pattern for finding packages. (This is the 'q=guice' parameter).
-     *                The pattern is matched against an artifact's ID, which is the [groupID]:[artifactID]
-     *                e.g. 'com.google.java:guice' matches 'com', 'google', 'gui*' etc.
+     * @param pattern Pattern for finding packages. (This is the "q=guice" parameter).
+     *                The pattern is matched against an artifact"s ID, which is the [groupID]:[artifactID]
+     *                e.g. "com.google.java:guice" matches "com", "google", "gui*" etc.
      * @param rows Limits the number of results to display. (The default on the server side is 10)
      */
     public void runQuery(final String repositoryURL, final String pattern, final int rows) {
