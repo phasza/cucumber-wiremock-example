@@ -111,7 +111,10 @@ public class SearchSteps {
      */
     @Then("the command returns with success")
     public void commandReturnsWithSuccess() {
-        assertEquals(Status.SUCCESS.getValue(), applicationContext.getStatus());
+        assertEquals(
+                Status.SUCCESS.getValue(),
+                applicationContext.getStatus(),
+                "Command did not return with SUCCESS");
     }
 
     /**
@@ -119,7 +122,10 @@ public class SearchSteps {
      */
     @Then("the command returns with error")
     public void commandReturnsWithError() {
-        assertEquals(Status.ERROR.getValue(), applicationContext.getStatus());
+        assertEquals(
+                Status.ERROR.getValue(),
+                applicationContext.getStatus(),
+                "Command did not return with ERROR");
     }
 
     /**
